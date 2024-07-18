@@ -1,6 +1,6 @@
-# PDFImageExtractor
+# PDFImageRetriever
 
-PDFImageExtractor is a Python tool designed to extract images from PDF documents and detect their bounding boxes and dominant colors. This tool utilizes `pdfplumber` for PDF parsing and `PIL` (Pillow) for image processing.
+PDFImageRetriever is a Python tool designed to extract images from PDF documents and detect their bounding boxes and dominant colors. This tool utilizes `pdfplumber` for PDF parsing and `PIL` (Pillow) for image processing.
 
 ## Features
 
@@ -13,5 +13,5 @@ PDFImageExtractor is a Python tool designed to extract images from PDF documents
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Zaaccckkkk/PDFImageExtractor.git
-   cd PDFImageExtractor
+   git clone https://github.com/Zaaccckkkk/PDFImageRetriever.git
+   cd PDFImageRetriever
