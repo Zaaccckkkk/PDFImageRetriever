@@ -19,13 +19,14 @@ class BboxFinder:
         self.pixels = self.image.load()
         self.reference_color = reference_color
 
-    def is_ref_color(self, pixel, threshold=2):
+    def is_ref_color(self, pixel, threshold=30):
         """Check whether certain pixel is the required 'reference color'."""
-        r, g, b = pixel[:3]
-        rr, rg, rb = self.reference_color
-        return abs(r - rr) < threshold and abs(g - rg) < threshold and abs(b - rb) < threshold
+        for ref_color in self.reference_color:
+            r, g, b = pixel[:3]
+            rr, rg, rb = ref_color
+            return abs(r - rr) < threshold and abs(g - rg) < threshold and abs(b - rb) < threshold
 
-    def is_x_ref(self, x, y0, y1, threshold=2):
+    def is_x_ref(self, x, y0, y1, threshold=30):
         """Check a whole horizontal line."""
         color_count = 0
         for y in range(int(y0), int(y1)):
@@ -33,7 +34,7 @@ class BboxFinder:
                 color_count += 1
         return color_count / (y1-y0) > 0.6  # Adjust the percentage yourself.
 
-    def is_y_ref(self, y, x0, x1, threshold=2):
+    def is_y_ref(self, y, x0, x1, threshold=30):
         """Check a whole vertical line."""
         color_count = 0
         for x in range(int(x0), int(x1)):
@@ -51,11 +52,11 @@ class BboxFinder:
         y_list = []
 
         for x in range(width):
-            if self.is_x_ref(x, initial_top, initial_bottom, threshold=2):
+            if self.is_x_ref(x, initial_top, initial_bottom, threshold=30):
                 x_list.append(x)
 
         for y in range(height):
-            if self.is_y_ref(y, initial_left, initial_right, threshold=2):
+            if self.is_y_ref(y, initial_left, initial_right, threshold=30):
                 y_list.append(y)
 
         # Find the new bbox which is closest to the initial bbox
