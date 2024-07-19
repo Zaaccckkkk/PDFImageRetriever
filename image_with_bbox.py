@@ -1,6 +1,7 @@
 import pdfplumber
 import os
 from PIL import Image
+import fitz
 
 
 class BboxFinder:
@@ -74,16 +75,20 @@ class PDFImageExtractor:
     All images are originally detected by pdfplumber.
     """
 
-    def __init__(self, pdf_path, output_folder, reference_color=None):
+    def __init__(self, pdf_path, output_folder, output_folder2, reference_color=None):
         self.pdf_path = pdf_path
         self.output_folder = output_folder
+        self.output_folder2 = output_folder2
         self.pdf = pdfplumber.open(pdf_path)
+        self.document = fitz.open(pdf_path)
         self.reference_color = reference_color
 
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)
+        if not os.path.exists(output_folder2):
+            os.makedirs(output_folder2)
 
-    def extract_images(self):
+    def extract_images(self, dpi=300):
         image_dict = {}
         previous_bbox = None  # Store the previous bbox
         zoom = dpi / 72  # 72 is the default DPI for PDF
