@@ -86,28 +86,43 @@ class PDFImageExtractor:
     def extract_images(self):
         image_dict = {}
         previous_bbox = None  # Store the previous bbox
+        zoom = dpi / 72  # 72 is the default DPI for PDF
+        
         for page_num, page in enumerate(self.pdf.pages):
             page_key = page_num + 1
             if page_key not in image_dict:
                 image_dict[page_key] = []
             page_image_info = page.images
             for img_index, img_info in enumerate(page_image_info):
-                img_bbox = (0, 0, page.width, page.height)
-                img = page.within_bbox(img_bbox).to_image()
-                img_path = os.path.join(self.output_folder, f"page_{page_num+1}_image_{img_index + 1}.png")
-                img.save(img_path, format="PNG")
+                page = self.document.load_page(page_num)
+                
+                # Render the entire page as a high resolution image
+                mat = fitz.Matrix(zoom, zoom)
+                pix = page.get_pixmap(matrix=mat)
+            
+                # Convert the rendered image to a PIL image
+                page_image = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+                
+                # Save the image
+                image_filename = f"{self.output_folder}/page_{page_num+1}_image_{img_index + 1}.png"
+                page_image.save(image_filename)
 
-                # Extract the image based on the new bbox
-                pil_img = Image.open(img_path)
-                initial_bbox = (img_info["x0"], img_info["top"], img_info["x1"], img_info["bottom"])
+                # Convert to high DPI coordinates
+                pil_img = Image.open(image_filename)
+                initial_bbox = (
+                    img_info["x0"] * zoom,
+                    img_info["top"] * zoom,
+                    img_info["x1"] * zoom,
+                    img_info["bottom"] * zoom
+                )
+                
                 bbox_finder = BboxFinder(pil_img, self.reference_color)
                 color_bbox = bbox_finder.find_bbox(initial_bbox)
                 if color_bbox and color_bbox != previous_bbox:
                     pil_img = pil_img.crop(color_bbox)
-                    pil_img.save(img_path, format="PNG")
+                    image_filename2 = f"{self.output_folder2}/page_{page_num+1}_image_{img_index + 1}.png"
+                    pil_img.save(image_filename2, format="PNG")
                     previous_bbox = color_bbox  # Update previous_bbox
-                    image_dict[page_key].append(img_path)
-                else:
-                    os.remove(img_path)  # Delete useless image
+                    image_dict[page_key].append(image_filename2)
 
         return image_dict
