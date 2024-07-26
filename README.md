@@ -18,6 +18,14 @@ PDFImageRetriever is a Python tool designed to extract images from PDF documents
 
 2. Download the [sample_border_line.png](sample_border_line.png) and [sample_github_sop.pdf](sample_github_sop.pdf) to give a test.
 
+sample_border_line.png
+
+- This file contains a simple border line used for testing the bounding box detection functionality. The black line in the middle of the image is intended to simulate a border that the `BboxFinder` class can detect and use to determine the bounding box.
+
+sample_github_sop.pdf
+
+- This PDF file contains embedded images that can be extracted and analyzed using the provided tools.
+
 3. Run the sample files:
 
    ```bash
