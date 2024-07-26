@@ -1,6 +1,6 @@
 # PDFImageRetriever
 
-PDFImageRetriever is a Python tool designed to extract images from PDF documents and detect their bounding boxes and dominant colors, mainly suitable for PDFs containing tables and with post-annotations in images. This tool utilizes `pdfplumber` for PDF parsing and `PIL` (Pillow) for image processing.
+PDFImageRetriever is a Python tool designed to extract images from tables in PDF documents through detecting their bounding boxes and dominant colors of the boxes, especially suitable for PDFs containing tables with post-annotations in images. This tool utilizes `pdfplumber` for PDF parsing and `PIL` (Pillow) , `fitz` (pymupdf) for image processing.
 
 ## Features
 
