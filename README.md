@@ -31,7 +31,7 @@ PDFImageRetriever is a Python tool designed to extract images from PDF documents
 
 (b) Return the most common color.
 
-3. [image_with_bbox.py](image_with_bbox.py):
+2. [image_with_bbox.py](image_with_bbox.py):
 
 (a) Use class BboxFinder to get the nearest border of the image we want to capture.
 
