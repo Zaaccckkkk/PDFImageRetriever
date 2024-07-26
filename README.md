@@ -31,15 +31,15 @@ PDFImageRetriever is a Python tool designed to extract images from PDF documents
 
 1. [detect_color.py](detect_color.py):
 
-- Use class ColorDetector to analyze the RGB image of the border line of a table in pdf file, traverse each pixel in the image, get the color of the pixel and record the number of times each color appears.
+- Use `ColorDetector` class to analyze the RGB image of the border line of a table in pdf file, traverse each pixel in the image, get the color of the pixel and record the number of times each color appears.
 
 - Return the most common color.
 
 2. [image_with_bbox.py](image_with_bbox.py):
 
-- Use class BboxFinder to get the nearest border of the image we want to capture.
+- Use `BboxFinder` class to get the nearest border of the image we want to capture.
 
-- class PDFImageExtractor helps to extract the image from the whole page using the coordinates of the nearest border.
+- `PDFImageExtractor` class helps to extract the image from the whole page using the coordinates of the nearest border.
 
 - Render a high resolution image by adjust DPI.
 
