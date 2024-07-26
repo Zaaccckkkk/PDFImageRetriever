@@ -15,3 +15,10 @@ PDFImageRetriever is a Python tool designed to extract images from PDF documents
    ```bash
    git clone https://github.com/Zaaccckkkk/PDFImageRetriever.git
    cd PDFImageRetriever
+
+2. Download the sample_border_line.png and sample_github_sop.pdf to give a test.
+
+3. Run the run.py:
+
+   ```bash
+   python run.py
