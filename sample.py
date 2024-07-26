@@ -3,7 +3,7 @@ from image_with_bbox import PDFImageExtractor
 
 
 # Change the paths below to match your file locations
-image_path = "/Users/wuzhentian/Desktop/box_line.png"
+image_path = "/Users/wuzhentian/Desktop/border_line.png"
 pdf_path = "/Users/wuzhentian/Desktop/github_sop.pdf"
 output_folder = "/Users/wuzhentian/Desktop/get_page_images"
 output_folder2 = "/Users/wuzhentian/Desktop/get_useful_images"
