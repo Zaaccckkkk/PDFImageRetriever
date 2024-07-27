@@ -22,14 +22,17 @@ PDFImageRetriever is a Python tool designed to extract images from tables in PDF
    Create your venv:
    ```bash
    python3.11 -m venv your_venv
+   ```
    
    Activate your venv:
    ```bash
    source your_venv/bin/activate
+   ```
 
    Install the requirements to your venv:
    ```bash
    pip install -r requirements.txt
+   ```
 
 4. Download the [sample_border_line.png](sample_border_line.png) and [sample_github_sop.pdf](sample_github_sop.pdf) to give a test.
 
