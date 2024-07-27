@@ -1,6 +1,6 @@
 # PDFImageRetriever
 
-PDFImageRetriever is a Python tool designed to extract images from tables in PDF documents through detecting their bounding boxes and dominant colors of the boxes, especially suitable for PDFs containing tables with post-annotations in images. This tool utilizes `pdfplumber` for PDF parsing and `PIL` (Pillow) , `fitz` (pymupdf) for image processing.
+PDFImageRetriever is a Python tool designed to extract images from tables in PDF documents through detecting their bounding boxes and dominant colors of the boxes, especially suitable for PDFs containing tables with post-annotated images. This tool utilizes `pdfplumber` for PDF parsing and `PIL` (Pillow) , `fitz` (pymupdf) for image processing.
 
 ## Features
 
@@ -16,18 +16,33 @@ PDFImageRetriever is a Python tool designed to extract images from tables in PDF
    git clone https://github.com/Zaaccckkkk/PDFImageRetriever.git
    cd PDFImageRetriever
 
-2. Download the [sample_border_line.png](sample_border_line.png) and [sample_github_sop.pdf](sample_github_sop.pdf) to give a test.
+2. Install requirements
+
+   We highly recommend creating a new virtual environment(venv) in a location of your choice and installing all requirements into the venv.
+   Create your venv:
+   ```bash
+   python3.11 -m venv your_venv
+   
+   Activate your venv:
+   ```bash
+   source your_venv/bin/activate
+
+   Install the requirements to your venv:
+   ```bash
+   pip install -r requirements.txt
+
+4. Download the [sample_border_line.png](sample_border_line.png) and [sample_github_sop.pdf](sample_github_sop.pdf) to give a test.
 
 - sample_border_line.png contains a simple border line used for testing the bounding box detection functionality. The black line in the middle of the image is intended to simulate a border that the `BboxFinder` class can detect and use to determine the bounding box.
 
 - sample_github_sop.pdf contains embedded images that can be extracted and analyzed using the provided tools.
 
-3. Run the sample files:
+4. Run the sample files:
 
    ```bash
    python run.py
 
-4. Convert the table to csv file:
+5. Convert the table to csv file:
 
    ```bash
    python sample_table_to_csv.py
@@ -46,5 +61,6 @@ PDFImageRetriever is a Python tool designed to extract images from tables in PDF
 
 - `PDFImageExtractor` class helps to extract the image from the whole page using the coordinates of the nearest border.
 
-- Render a high resolution image by adjust DPI.
+- Render a high resolution image by adjusting DPI.
 
+## Use an SOP PDF example
