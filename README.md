@@ -66,4 +66,4 @@ PDFImageRetriever is a Python tool designed to extract images from tables in PDF
 
 - Render a high resolution image by adjusting DPI.
 
-## Use an SOP PDF example
+## An SOP PDF example
