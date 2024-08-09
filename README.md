@@ -73,12 +73,14 @@ PDFImageRetriever is a Python tool designed to extract images from tables in PDF
 - Put the result images into folders
 
 ## An SOP PDF example
-<img width=50% alt="example_page" src="https://github.com/user-attachments/assets/398bf485-d55a-4bb7-96b9-73d8d72001f6"> <img width=30% alt="example_border_line" src="https://github.com/user-attachments/assets/ecc7b5bb-45ff-4750-b244-fc7d354d64a0">
+<img width=60% alt="example_page" src="https://github.com/user-attachments/assets/398bf485-d55a-4bb7-96b9-73d8d72001f6"> <img width=30% alt="example_border_line" src="https://github.com/user-attachments/assets/ecc7b5bb-45ff-4750-b244-fc7d354d64a0">
 
 I created a simple SOP PDF file (example_github_sop.pdf) that contains annotated images within the tables.
+
 The left image above shows one page of the example_github_sop.pdf. I then get the example_border_line.png by zooming in.
 
-Then, after running the `run.py`, we output all the images in the folder `get_useful_images`.
+Then, after running the `run.py`, we output all the images in the folder `get_images_useful`.
+
 <img width=99% src="https://github.com/user-attachments/assets/15126ece-e54a-40aa-9d36-d39c5e26dee4">
 
 Each output image is a cell containing the original image. In this way, we successfully incorporated the annotations within the images in the table.
