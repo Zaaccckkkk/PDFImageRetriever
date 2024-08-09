@@ -19,7 +19,6 @@ PDFImageRetriever is a Python tool designed to extract images from tables in PDF
 
    ```bash
    git clone https://github.com/Zaaccckkkk/PDFImageRetriever.git
-   cd PDFImageRetriever
 
 2. Install requirements
 
@@ -36,6 +35,7 @@ PDFImageRetriever is a Python tool designed to extract images from tables in PDF
 
    Install the requirements to your venv:
    ```bash
+   cd PDFImageRetriever
    pip install -r requirements.txt
    ```
 
