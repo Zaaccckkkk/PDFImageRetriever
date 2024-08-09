@@ -83,4 +83,6 @@ Then, after running the `run.py`, we output all the images in the folder `get_im
 
 <img width=99% src="https://github.com/user-attachments/assets/15126ece-e54a-40aa-9d36-d39c5e26dee4">
 
-Each output image is a cell containing the original image. In this way, we successfully incorporated the annotations within the images in the table.
+Each output image is a cell containing the original image.
+
+In this way, we successfully incorporated the annotations within the images in the table.
