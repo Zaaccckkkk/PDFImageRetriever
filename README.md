@@ -34,7 +34,7 @@ PDFImageRetriever is a Python tool designed to extract images from tables in PDF
    pip install -r requirements.txt
    ```
 
-4. Download the [sample_border_line.png](sample_border_line.png) and [sample_github_sop.pdf](sample_github_sop.pdf) to give a test.
+3. Download the [sample_border_line.png](sample_border_line.png) and [sample_github_sop.pdf](sample_github_sop.pdf) to give a test.
 
 - sample_border_line.png contains a simple border line used for testing the bounding box detection functionality. The black line in the middle of the image is intended to simulate a border that the `BboxFinder` class can detect and use to determine the bounding box.
 
@@ -66,4 +66,19 @@ PDFImageRetriever is a Python tool designed to extract images from tables in PDF
 
 - Render a high resolution image by adjusting DPI.
 
+3. [run.py](run.py):
+
+- Apply `detect_color` and `image_with_bbox` on the sample `.png` and `.pdf`
+
+- Put the result images into folders
+
 ## An SOP PDF example
+<img width=50% alt="example_page" src="https://github.com/user-attachments/assets/398bf485-d55a-4bb7-96b9-73d8d72001f6"> <img width=30% alt="example_border_line" src="https://github.com/user-attachments/assets/ecc7b5bb-45ff-4750-b244-fc7d354d64a0">
+
+I created a simple SOP PDF file (example_github_sop.pdf) that contains annotated images within the tables.
+The left image above shows one page of the example_github_sop.pdf. I then get the example_border_line.png by zooming in.
+
+Then, after running the `run.py`, we output all the images in the folder `get_useful_images`.
+<img width=99% src="https://github.com/user-attachments/assets/15126ece-e54a-40aa-9d36-d39c5e26dee4">
+
+Each output image is a cell containing the original image. In this way, we successfully incorporated the annotations within the images in the table.
