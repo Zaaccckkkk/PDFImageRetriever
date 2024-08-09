@@ -10,6 +10,9 @@ PDFImageRetriever is a Python tool designed to extract images from tables in PDF
 
 ## Installation
 
+> [!NOTE]
+> Modify all the paths in the Python file to the appropriate ones for your environment.
+
 1. Clone the repository:
 
    ```bash
